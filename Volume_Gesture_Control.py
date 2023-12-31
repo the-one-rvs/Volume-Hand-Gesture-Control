@@ -65,7 +65,10 @@ while True:
 
         if length<50:
             cv.circle(img, (cx,cy), 11, (0,255,0), cv.FILLED)
-        
+
+        if vol>=(-2.0):
+            cv.circle(img, (cx,cy), 11, (0,255,255), cv.FILLED)
+
         cv.rectangle(img, (50,150), (85,400), (150,250,100), 3)
         cv.rectangle(img, (50,int(volBar)), (85,400), (150,250,100), cv.FILLED)
         cv.putText(img, f'{int(volPer)} %', (40,450), cv.FONT_HERSHEY_COMPLEX, 1, (150,250,100), 3)
@@ -75,7 +78,7 @@ while True:
     fps = 1/(cTime - pTime)
     pTime = cTime
 
-    cv.putText(img, f'FPS: {int(fps)}', (40,50), cv.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 3)
+    cv.putText(img, f'FPS: {int(fps)}', (40,50), cv.FONT_HERSHEY_COMPLEX, 1, (255,0,0), 3)
 
     cv.imshow('Camera',img)
 
