@@ -57,7 +57,7 @@ def main():
 
         cv.imshow('Camera',img)
 
-        if cv.waitKey(20) & 0xFF==ord('d'):
+        if cv.waitKey(1) & 0xFF==ord('d'):
             break
 
     capture.release()
